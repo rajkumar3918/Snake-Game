@@ -3,6 +3,7 @@ var rows = 20;
 var cols = 20;
 var pixelSize = 25;
 var c = canvas.getContext('2d');
+var score = document.getElementById("sc");
 
 // snake head //
 var sx  = pixelSize*5;
@@ -54,7 +55,7 @@ window.onload = function(){
 }
 
 
-
+let sc = 0
 
 function update(){
 
@@ -66,6 +67,8 @@ function update(){
 
     if(sx == fx && sy == fy){
         snakeBody.push(new Bodyparts(fx,fy));
+        sc+=5
+        score.innerHTML = sc;
         food();
     }
 
